@@ -18,7 +18,7 @@ namespace TTMicroscope
             InitializeComponent();
             StartPosition = FormStartPosition.CenterParent;
 
-            ///121
+            ///121000
             ///
         }
 
