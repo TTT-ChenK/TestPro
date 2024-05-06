@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props" Condition="Exists('..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBCA5C75-EA95-4AA2-B56D-0CF7E2708463}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TTMicroscope</RootNamespace>
+    <AssemblyName>TTMicroscope</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>60x60.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ACS.SPiiPlusNET">
+      <HintPath>bin\x64\Debug\ACS.SPiiPlusNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DouUpDownCountHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\DouUpDownCountHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="DouUpDownCountHandlerDll">
+      <HintPath>..\..\TTMicroscope0105(第一个版本最后机台运行)\TTMicroscope\bin\x64\Debug\DouUpDownCountHandlerDll.dll</HintPath>
+    </Reference>
+    <Reference Include="KBase">
+      <HintPath>bin\x64\Debug\KBase.dll</HintPath>
+    </Reference>
+    <Reference Include="KChart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\KChart.dll</HintPath>
+    </Reference>
+    <Reference Include="KDataGridView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\KLibs0319\KDataGridView\bin\Debug\KDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="KImageCtr">
+      <HintPath>bin\x64\Debug\KImageCtr.dll</HintPath>
+    </Reference>
+    <Reference Include="Kitware.mummy.Runtime, Version=1.0.2.599, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\Kitware.mummy.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Kitware.VTK, Version=5.8.0.607, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\Kitware.VTK.dll</HintPath>
+    </Reference>
+    <Reference Include="KMotions">
+      <HintPath>bin\x64\Debug\KMotions.dll</HintPath>
+    </Reference>
+    <Reference Include="KPageCtr">
+      <HintPath>bin\x64\Debug\KPageCtr.dll</HintPath>
+    </Reference>
+    <Reference Include="KPublic">
+      <HintPath>bin\x64\Debug\KPublic.dll</HintPath>
+    </Reference>
+    <Reference Include="kuangxuanquyu">
+      <HintPath>C:\Users\Administrator\Desktop\kuangxuanquyu\kuangxuanquyu\bin\Debug\net6.0\kuangxuanquyu.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net">
+      <HintPath>..\..\..\..\..\Libs\KLibs1114\TTCameraLib\bin\Debug\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Common, Version=19.0.40.49152, Culture=neutral, PublicKeyToken=dc6ad606294fc298" />
+    <Reference Include="NationalInstruments.UI, Version=19.0.45.49154, Culture=neutral, PublicKeyToken=4febd62461bf11a4" />
+    <Reference Include="NationalInstruments.UI.WindowsForms, Version=19.0.45.49154, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=MSIL" />
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\OpenCvSharp4.4.8.0.20230708\lib\net48\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\OpenCvSharp4.Extensions.4.8.0.20230708\lib\net48\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCHandlerDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\PCHandlerDll.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.D3DCompiler, Version=2.6.3.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\SharpDX.D3DCompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Desktop">
+      <HintPath>Dll\SharpDX.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11, Version=2.6.3.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D12">
+      <HintPath>Dll\SharpDX.Direct3D12.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectInput">
+      <HintPath>Dll\SharpDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XInput">
+      <HintPath>Dll\SharpDX.XInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGL">
+      <HintPath>Dll\SharpGL.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGL.WinForms">
+      <HintPath>Dll\SharpGL.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TT">
+      <HintPath>Dll\TT.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TTCameraLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\TTCameraLib.dll</HintPath>
+    </Reference>
+    <Reference Include="TTDirect2D1">
+      <HintPath>Dll\TTDirect2D1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TTDXGI">
+      <HintPath>Dll\TTDXGI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TTMathematics">
+      <HintPath>Dll\TTMathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TTPublic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\TTPublic.dll</HintPath>
+    </Reference>
+    <Reference Include="WLIAlgo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\WLIAlgo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alg\ImageToCloudPointAlg.cs" />
+    <Compile Include="Analysis\CAnalysisPublic.cs" />
+    <Compile Include="TControls\Measure\CountLinePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\CountLinePanel.Designer.cs">
+      <DependentUpon>CountLinePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detect\CImage2PointCloud.cs" />
+    <Compile Include="Detect\CFocusAlg.cs" />
+    <Compile Include="FObjectCfg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FObjectCfg.Designer.cs">
+      <DependentUpon>FObjectCfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\Measure\LevelPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\LevelPanel.Designer.cs">
+      <DependentUpon>LevelPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\Measure\LoadFilePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\LoadFilePanel.Designer.cs">
+      <DependentUpon>LoadFilePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\Measure\RoughTestPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\RoughTestPanel.Designer.cs">
+      <DependentUpon>RoughTestPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\PMotion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\PMotion.Designer.cs">
+      <DependentUpon>PMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\Measure\2DDetect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\2DDetect.Designer.cs">
+      <DependentUpon>2DDetect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\Measure\3DDetect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\3DDetect.Designer.cs">
+      <DependentUpon>3DDetect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CGlobal.cs" />
+    <Compile Include="TControls\Measure\ElePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\ElePanel.Designer.cs">
+      <DependentUpon>ElePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\Measure\OtherTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\OtherTool.Designer.cs">
+      <DependentUpon>OtherTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\Measure\PreProcess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\Measure\PreProcess.Designer.cs">
+      <DependentUpon>PreProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\PAnalysis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\PAnalysis.Designer.cs">
+      <DependentUpon>PAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\K3DModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\K3DModel.designer.cs">
+      <DependentUpon>K3DModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TParameter\CParameter.cs" />
+    <Compile Include="TControls\MiddlePanel\SubCtr\KProgressBarH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\KProgressBarH.Designer.cs">
+      <DependentUpon>KProgressBarH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\ObjectSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\ObjectSelect.Designer.cs">
+      <DependentUpon>ObjectSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\SObject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\SObject.Designer.cs">
+      <DependentUpon>SObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\PImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\PImage.Designer.cs">
+      <DependentUpon>PImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\PWorkFlow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\PWorkFlow.Designer.cs">
+      <DependentUpon>PWorkFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\PHardwareControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubPanel\PHardwareControl.Designer.cs">
+      <DependentUpon>PHardwareControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\PParameter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\PParameter.Designer.cs">
+      <DependentUpon>PParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\PDataAcq.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\PDataAcq.Designer.cs">
+      <DependentUpon>PDataAcq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\LeftPanel\LeftNevigate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TControls\LeftPanel\LeftNevigate.Designer.cs">
+      <DependentUpon>LeftNevigate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\ControlsPublic.cs" />
+    <Compile Include="TControls\LeftPanel\LeftTitlePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\LeftPanel\LeftTitlePanel.Designer.cs">
+      <DependentUpon>LeftTitlePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\TDataTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\TDataTable.Designer.cs">
+      <DependentUpon>TDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TControls\TopPanel\TopTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\TopPanel\TopTitle.Designer.cs">
+      <DependentUpon>TopTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\CtrPublic\TGroupBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\CtrPublic\TGroupBox.Designer.cs">
+      <DependentUpon>TGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\WorkFlow\WLIWorkFlow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\WorkFlow\WLIWorkFlow.Designer.cs">
+      <DependentUpon>WLIWorkFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\TMotorManual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\MiddlePanel\SubCtr\TMotorManual.designer.cs">
+      <DependentUpon>TMotorManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TPublic\TPublic.cs" />
+    <Compile Include="TControls\UManualControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TControls\UManualControl.Designer.cs">
+      <DependentUpon>UManualControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TControls\Measure\CountLinePanel.resx">
+      <DependentUpon>CountLinePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FObjectCfg.resx">
+      <DependentUpon>FObjectCfg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\LevelPanel.resx">
+      <DependentUpon>LevelPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\LoadFilePanel.resx">
+      <DependentUpon>LoadFilePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\RoughTestPanel.resx">
+      <DependentUpon>RoughTestPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\2DDetect.resx">
+      <DependentUpon>2DDetect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\3DDetect.resx">
+      <DependentUpon>3DDetect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\ElePanel.resx">
+      <DependentUpon>ElePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\OtherTool.resx">
+      <DependentUpon>OtherTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\Measure\PreProcess.resx">
+      <DependentUpon>PreProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\K3DModel.resx">
+      <DependentUpon>K3DModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\PAnalysis.resx">
+      <DependentUpon>PAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubCtr\PMotion.resx">
+      <DependentUpon>PMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubCtr\KProgressBarH.resx">
+      <DependentUpon>KProgressBarH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubPanel\ObjectSelect.resx">
+      <DependentUpon>ObjectSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubCtr\SObject.resx">
+      <DependentUpon>SObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubPanel\PImage.resx">
+      <DependentUpon>PImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubPanel\PWorkFlow.resx">
+      <DependentUpon>PWorkFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubPanel\PHardwareControl.resx">
+      <DependentUpon>PHardwareControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\PDataAcq.resx">
+      <DependentUpon>PDataAcq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\LeftPanel\LeftNevigate.resx">
+      <DependentUpon>LeftNevigate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\LeftPanel\LeftTitlePanel.resx">
+      <DependentUpon>LeftTitlePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\PParameter.resx">
+      <DependentUpon>PParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubCtr\TDataTable.resx">
+      <DependentUpon>TDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TControls\TopPanel\TopTitle.resx">
+      <DependentUpon>TopTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\CtrPublic\TGroupBox.resx">
+      <DependentUpon>TGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\WorkFlow\WLIWorkFlow.resx">
+      <DependentUpon>WLIWorkFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\MiddlePanel\SubCtr\TMotorManual.resx">
+      <DependentUpon>TMotorManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TControls\UManualControl.resx">
+      <DependentUpon>UManualControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T-logo-White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20x_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5x_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\资源 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\资源 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgCfg.png" />
+    <None Include="Resources\ImgAcq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgData.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="60x60.ico" />
+    <Content Include="logobig.ico" />
+    <None Include="Resources\旋转2.png" />
+    <None Include="Resources\旋转1.png" />
+    <None Include="Resources\3D.png" />
+    <None Include="Resources\模型.png" />
+    <None Include="Resources\图片集 %283%29.png" />
+    <None Include="Resources\图片集 %282%29.png" />
+    <None Include="Resources\图片集 %281%29.png" />
+    <None Include="Resources\校平02.png" />
+    <None Include="Resources\旋转01.png" />
+    <None Include="Resources\生成模型01.png" />
+    <None Include="Resources\打印02.png" />
+    <None Include="Resources\输出文档01.png" />
+    <None Include="Resources\加载项目01.png" />
+    <None Include="Resources\保存项目02.png" />
+    <None Include="Resources\最小高度02.png" />
+    <None Include="Resources\最大高度021.png" />
+    <None Include="Resources\最大高度02.png" />
+    <None Include="Resources\体积01.png" />
+    <None Include="Resources\台阶高度01.png" />
+    <None Include="Resources\粗糙度01.png" />
+    <None Include="Resources\平面度02.png" />
+    <None Include="Resources\面积01.png" />
+    <None Include="Resources\直线度01.png" />
+    <None Include="Resources\等高线01.png" />
+    <None Include="Resources\剖面取线02.png" />
+    <None Include="Resources\剖面01.png" />
+    <None Include="Resources\3D模型02.png" />
+    <None Include="Resources\拼接01.png" />
+    <None Include="Resources\旋转02.png" />
+    <None Include="Resources\滤波01.png" />
+    <None Include="Resources\校平01.png" />
+    <None Include="Resources\生成模型02.png" />
+    <None Include="Resources\生成点云01.png" />
+    <None Include="Resources\点云拼接.png" />
+    <None Include="Resources\角度02.png" />
+    <None Include="Resources\区域01.png" />
+    <None Include="Resources\圆02.png" />
+    <None Include="Resources\折痕01.png" />
+    <None Include="Resources\线段02.png" />
+    <None Include="Resources\点01.png" />
+    <None Include="Resources\2点间01.png" />
+    <None Include="Resources\点云 %281%29.png" />
+    <None Include="Resources\Point.png" />
+    <None Include="Resources\home %281%29.png" />
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props'))" />
+  </Target>
+</Project>
