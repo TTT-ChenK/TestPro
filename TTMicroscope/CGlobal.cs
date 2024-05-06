@@ -20,7 +20,7 @@ namespace TTMicroscope
 
 
         public static HaiKangCamera camera;
-        public static CameraConfig cameracfg =new CameraConfig(); //001000
+        public static CameraConfig cameracfg =new CameraConfig(); //00100000000
         public static MotionConfig motionCfg=new MotionConfig();
         public static CPEGParameter pEGCfg=new CPEGParameter();
         public static CAcsMotion acsHdl = new CAcsMotion();
